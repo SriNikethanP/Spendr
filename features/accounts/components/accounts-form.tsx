@@ -11,7 +11,6 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 
 const formSchema = insertAccountSchema.pick({
@@ -81,7 +80,7 @@ export const AccountForm = ({
             className="w-full"
             variant={"outline"}
           >
-            <Trash className="size-4 mr-2">Delete account</Trash>
+            <Trash className="size-4 mr-2" /> Delete account
           </Button>
         )}
       </form>
