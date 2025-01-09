@@ -4,28 +4,30 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { client } from "@/lib/hono";
 
 type ResponseType = InferResponseType<
-  (typeof client.api.accounts)["bulk-delete"]["$post"]
+  (typeof client.api.categories)[":id"]["$patch"]
 >;
 type RequestType = InferRequestType<
-  (typeof client.api.accounts)["bulk-delete"]["$post"]
+  (typeof client.api.categories)[":id"]["$patch"]
 >["json"];
 
-export const useBulkDeleteAccounts = () => {
+export const useEditCategory = (id?: string) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
-      const response = await client.api.accounts["bulk-delete"]["$post"]({
+      const response = await client.api.categories[":id"]["$patch"]({
+        param: { id },
         json,
       });
       return await response.json();
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["accounts"] });
-      toast.success("Accounts deleted!");
+      queryClient.invalidateQueries({ queryKey: ["categories", { id }] });
+      queryClient.invalidateQueries({ queryKey: ["categories"] });
+      toast.success("category updated!");
     },
     onError: () => {
-      toast.error("Failed to delete accounts!");
+      toast.error("Failed to update category!");
     },
   });
 
