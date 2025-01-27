@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Loader2, Plus } from "lucide-react";
 import { columns } from "./columns";
-import { DataTable } from "@/components/ui/data-table";
+import { DataTable } from "@/components/data-table";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useNewCategory } from "@/features/categories/hooks/use-new-category";
 import { useBulkDeleteCategories } from "@/features/categories/api/use-bulk-delete-categories";
