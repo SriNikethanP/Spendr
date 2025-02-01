@@ -1,3 +1,4 @@
+"use client";
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import { client } from "@/lib/hono";
@@ -34,7 +35,7 @@ export const useGetSummary = () => {
           ...day,
           income: convertAmountFromMiliunits(day.income),
           expenses: convertAmountFromMiliunits(day.expenses),
-        }))
+        })),
       };
     },
   });

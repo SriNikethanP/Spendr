@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useNewTransaction } from "@/features/transactions/hooks/use-new-transaction";
 import { useBulkDeleteTransactions } from "@/features/transactions/api/use-bulk-delete-transactions";
 import { useGetTransactions } from "@/features/transactions/api/use-get-transactions";
+import { Suspense } from "react";
 
 const TransactionsPage = () => {
   const newTransaction = useNewTransaction();
@@ -64,4 +65,10 @@ const TransactionsPage = () => {
   );
 };
 
-export default TransactionsPage;
+export default function WrappedTransactionsPage() {
+  return (
+    <Suspense fallback={<div>Loading transactions...</div>}>
+      <TransactionsPage />
+    </Suspense>
+  );
+}

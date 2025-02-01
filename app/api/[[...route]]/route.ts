@@ -23,9 +23,9 @@ const routes = app
   .route("/transactions", transactions)
   .route("/summary", summary);
 
-export const GET = handle(app);
-export const POST = handle(app);
-export const PATCH = handle(app);
-export const DELETE = handle(app);
+export const GET = handle(routes);
+export const POST = handle(routes);
+export const PATCH = handle(routes);
+export const DELETE = handle(routes);
 
 export type AppType = typeof routes;
