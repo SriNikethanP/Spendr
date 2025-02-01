@@ -4,25 +4,17 @@ import { useState } from "react";
 import { format, subDays } from "date-fns";
 import { DateRange } from "react-day-picker";
 import { ChevronDown } from "lucide-react";
-import { cn, formatDateRange } from "@/lib/utils";
+import { formatDateRange } from "@/lib/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Button } from "../components/ui/button";
 import { Calendar } from "../components/ui/calendar";
 
-import { useGetSummary } from "@/features/summary/api/use-get-summary";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
   PopoverClose,
 } from "../components/ui/popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../components/ui/select";
 
 export const DateFilter = () => {
   const router = useRouter();

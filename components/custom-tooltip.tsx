@@ -3,8 +3,20 @@ import { format } from "date-fns";
 import { formatCurrency } from "@/lib/utils";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 
-export const CustomTooltip = ({ active, payload }: any) => {
-  if (!active) return null;
+type PayloadItem = {
+  payload: {
+    date: Date;
+  };
+  value: number;
+};
+
+type CustomTooltipProps = {
+  active?: boolean;
+  payload?: PayloadItem[];
+};
+
+export const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
+  if (!active || !payload || payload.length === 0) return null;
 
   const date = payload[0].payload.date;
   const income = payload[0].value;
