@@ -9,10 +9,7 @@ import {
 
 import { formatPercentage } from "@/lib/utils";
 import { CategoryTooltip } from "./category-tootip";
-import {
-  Props as LegendProps,
-  CustomPayload,
-} from "recharts/types/component/DefaultLegendContent";
+import { Props as LegendProps } from "recharts/types/component/DefaultLegendContent";
 
 const COLORS = ["#0062FF", "#12c6ff", "#ff647f", "#ff9354"];
 
@@ -23,6 +20,14 @@ type Props = {
   }[];
 };
 
+type CustomPayload = {
+  value: number | string;
+  color?: string;
+  payload?: {
+    value?: number | string;
+    percent?: number;
+  };
+};
 export const PieVariant = ({ data }: Props) => {
   return (
     <ResponsiveContainer width="100%" height={350}>
@@ -52,7 +57,11 @@ export const PieVariant = ({ data }: Props) => {
                         {entry.value}
                       </span>
                       <span className="text-sm">
-                        {formatPercentage(entry.payload?.percent * 100)}
+                        {formatPercentage(
+                          entry.payload?.percent
+                            ? entry.payload?.percent * 100
+                            : 0
+                        )}
                       </span>
                     </div>
                   </li>
