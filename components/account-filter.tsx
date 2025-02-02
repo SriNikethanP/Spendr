@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../components/ui/select";
+import { Skeleton } from "./ui/skeleton";
 
 export const AccountFilter = () => {
   const router = useRouter();
@@ -67,3 +68,4 @@ export const AccountFilter = () => {
     </Select>
   );
 };
+
