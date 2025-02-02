@@ -19,7 +19,7 @@ export function formatCurrency(value: number) {
     style: "currency",
     currency: "INR",
     minimumFractionDigits: 2,
-  }).format(convertAmountFromMiliunits(value));
+  }).format(value);
 }
 
 export function calculatePercentageChange(current: number, previous: number) {
