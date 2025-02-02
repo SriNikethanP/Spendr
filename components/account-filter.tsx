@@ -50,13 +50,13 @@ export const AccountFilter = () => {
     >
       <SelectTrigger
         className="lg:w-auto w-full h-9 rounded-md px-3
-            font-normal bg-red-500 hover:bg-yellow-500 hover:text-white border-none focus:ring-offset-0
+            font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none focus:ring-offset-0
             focus:ring-transparent outline-none text-white focus:bg-white/30 transition
             "
       >
         <SelectValue placeholder="Select account" />
       </SelectTrigger>
-      <SelectContent className="bg-black border-none">
+      <SelectContent className="bg-slate-100 border-none">
         <SelectItem value="all">All accounts</SelectItem>
         {accounts?.map((account) => (
           <SelectItem key={account.id} value={account.id}>
