@@ -9,6 +9,7 @@ import {
 
 import { formatPercentage } from "@/lib/utils";
 import { CategoryTooltip } from "./category-tootip";
+import { Props as LegendProps, Payload } from "recharts/types/component/DefaultLegendContent";
 
 const COLORS = ["#0062FF", "#12c6ff", "#ff647f", "#ff9354"];
 
@@ -28,10 +29,13 @@ export const PieVariant = ({ data }: Props) => {
           verticalAlign="bottom"
           align="right"
           iconType="circle"
-          content={({ payload }: any) => {
+          content={(props: LegendProps) => {
+            const { payload } = props;
+            if (!payload) return null;
+
             return (
               <ul className="flex flex-col space-y-2">
-                {payload.map((entry: any, index: number) => (
+                {payload.map((entry: Payload, index: number) => (
                   <li
                     key={`item-${index}`}
                     className="flex items-center space-x-2"
@@ -45,7 +49,7 @@ export const PieVariant = ({ data }: Props) => {
                         {entry.value}
                       </span>
                       <span className="text-sm">
-                        {formatPercentage(entry.payload.percent * 100)}
+                        {formatPercentage(entry.payload?.percent * 100)}
                       </span>
                     </div>
                   </li>

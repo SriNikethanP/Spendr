@@ -4,6 +4,7 @@ import {
   RadialBarChart,
   ResponsiveContainer,
 } from "recharts";
+import { Props as LegendProps, Payload } from "recharts/types/component/DefaultLegendContent";
 
 import { formatCurrency } from "@/lib/utils";
 
@@ -44,10 +45,12 @@ export const RadialVariant = ({ data }: Props) => {
           verticalAlign="bottom"
           align="right"
           iconType="circle"
-          content={({ payload }: any) => {
+          content={(props: LegendProps) => {
+            const { payload } = props;
+            if (!payload) return null;
             return (
               <ul className="flex flex-col space-y-2">
-                {payload.map((entry: any, index: number) => (
+                {payload.map((entry: Payload, index: number) => (
                   <li
                     key={`item-${index}`}
                     className="flex items-center space-x-2"
@@ -61,7 +64,7 @@ export const RadialVariant = ({ data }: Props) => {
                         {entry.value}
                       </span>
                       <span className="text-sm">
-                        {formatCurrency(entry.payload.value * 100)}
+                        {formatCurrency(entry.payload?.value * 100)}
                       </span>
                     </div>
                   </li>
