@@ -4,7 +4,10 @@ import {
   RadialBarChart,
   ResponsiveContainer,
 } from "recharts";
-import { Props as LegendProps, Payload } from "recharts/types/component/DefaultLegendContent";
+import {
+  Props as LegendProps,
+  Payload,
+} from "recharts/types/component/DefaultLegendContent";
 
 import { formatCurrency } from "@/lib/utils";
 
@@ -64,7 +67,7 @@ export const RadialVariant = ({ data }: Props) => {
                         {entry.value}
                       </span>
                       <span className="text-sm">
-                        {formatCurrency(entry.payload?.value * 100)}
+                        {formatCurrency(entry.payload?.value)}
                       </span>
                     </div>
                   </li>
