@@ -17,7 +17,6 @@ import { Select } from "@/components/select";
 import { DatePicker } from "@/components/date-picker";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  convertAmountFromMiliunits,
   convertAmountToMiliunits,
 } from "@/lib/utils";
 
@@ -89,7 +88,7 @@ export const TransactionForm = ({
               <FormControl>
                 <DatePicker
                   value={field.value}
-                  onChage={field.onChange}
+                  onChange={field.onChange}
                   disabled={disabled}
                 />
               </FormControl>

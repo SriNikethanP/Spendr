@@ -10,11 +10,11 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 type Props = {
   value?: Date;
-  onChage?: SelectSingleEventHandler;
+  onChange?: SelectSingleEventHandler;
   disabled?: boolean;
 };
 
-export const DatePicker = ({ value, onChage, disabled }: Props) => {
+export const DatePicker = ({ value, onChange, disabled }: Props) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -27,14 +27,14 @@ export const DatePicker = ({ value, onChage, disabled }: Props) => {
           )}
         >
           <CalenderIcon className="size-4 mr-2" />
-          {value ? format(value, "PPP") : <span>Pick a date</span>}
+          {format(value || new Date(), "PPP")}
         </Button>
       </PopoverTrigger>
       <PopoverContent>
         <Calendar
           mode="single"
-          selected={value}
-          onSelect={onChage}
+          selected={value || new Date()}
+          onSelect={onChange}
           disabled={disabled}
           initialFocus
         />
