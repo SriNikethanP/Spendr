@@ -62,8 +62,8 @@ Follow these steps to get a local copy of the project up and running:
 
 1. **Clone the repository**  
    ```bash  
-   git clone https://github.com/yourusername/budget-tracker.git  
-   cd budget-tracker  
+   git clone https://github.com/SriNikethanP/Spendr.git
+   cd spendr 
    ```  
 
 2. **Install dependencies**  
@@ -105,13 +105,12 @@ Contributions are welcome! Here's how you can get involved:
 ## 📧 Contact  
 
 If you have any questions or suggestions, feel free to reach out:  
-- **Name**: [Your Name]  
-- **Email**: [your.email@example.com](mailto:your.email@example.com)  
-- **GitHub**: [YourGitHubUsername](https://github.com/YourGitHubUsername)  
+- **Name**: Sri Nikethan Ponna
+- **Email**: [srinikethan.ponna@gmail.com](mailto:srinikethan.ponna@gmail.com)  
+- **GitHub**: [SriNikethanP](https://github.com/SriNikethanP)  
 
----  
+---
 
 ### 📌 Note  
 
 Feel free to update this README file as the project evolves. Let me know if you'd like me to refine it further!  
-
