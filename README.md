@@ -4,15 +4,14 @@ Budget Tracker is a modern finance tracking application designed to help busines
 
 ---  
 ## Live Application  
-- Try the live application here: [Budget Tracker](https://spendr-eosin.vercel.app/)  
+- Try the live application here: [Spendr](https://spendr-eosin.vercel.app/)  
 - Feel free to develop changes and raise a pull request.  
 
 ## Demo  
-![Image](https://github.com/user-attachments/assets/e376aa42-80c3-4ba3-a1f5-e102f8fe4b50)
-![Image](https://github.com/user-attachments/assets/41949f3b-8ea7-4638-9104-e6f1cd40528c)
+
 ![Image](https://github.com/user-attachments/assets/8bcb30e5-e478-4182-b9e2-c58c2650e0a6)
-![Image](https://github.com/user-attachments/assets/5eb075cb-328f-4b16-8159-12247d0012a9)
 ![Image](https://github.com/user-attachments/assets/0e957b80-2e76-4c44-8964-771696cb1384)
+![Image](https://github.com/user-attachments/assets/5eb075cb-328f-4b16-8159-12247d0012a9)
 ![Image](https://github.com/user-attachments/assets/698e2d1d-289e-4c48-b7ea-8381a9ba1f4d)
 ![Image](https://github.com/user-attachments/assets/ada0dcfa-4e17-4d91-a96d-a87db2733fa3)
 ![Image](https://github.com/user-attachments/assets/2f193fa4-a1e7-4ac5-a63f-6ef56d9947ce)
