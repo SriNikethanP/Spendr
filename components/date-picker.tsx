@@ -14,7 +14,7 @@ type Props = {
   disabled?: boolean;
 };
 
-export const DatePicker = ({ value = new Date(), onChange, disabled }: Props) => {
+export const DatePicker = ({ value, onChange, disabled }: Props) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
